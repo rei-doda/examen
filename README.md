@@ -12,98 +12,6 @@ examen/
 ├── .gitignore
 ├── docker-compose.yml
 ├── examen-backend/
-│   ├── bin/
-│   │   ├── main/
-│   │   │   ├── application.properties
-│   │   │   └── com/
-│   │   │       └── rei/
-│   │   │           └── examenbackend/
-│   │   │               ├── config/
-│   │   │               │   ├── CorsConfig.class
-│   │   │               │   ├── CorsConfig$1.class
-│   │   │               │   ├── JwtAuthenticationFilter.class
-│   │   │               │   ├── JwtService.class
-│   │   │               │   └── SecurityConfig.class
-│   │   │               ├── controller/
-│   │   │               │   ├── AnswerController.class
-│   │   │               │   ├── AuthenticationController.class
-│   │   │               │   ├── CategoryController.class
-│   │   │               │   ├── ExaminationController.class
-│   │   │               │   ├── ExaminationSessionController.class
-│   │   │               │   ├── QuestionController.class
-│   │   │               │   ├── TodoController.class
-│   │   │               │   └── UserController.class
-│   │   │               ├── dto/
-│   │   │               │   ├── answer/
-│   │   │               │   │   ├── AnswerRequest.class
-│   │   │               │   │   ├── AnswerResponse.class
-│   │   │               │   │   └── AnswerResponse$AnswerResponseBuilder.class
-│   │   │               │   ├── auth/
-│   │   │               │   │   ├── AuthRequest.class
-│   │   │               │   │   ├── AuthResponse.class
-│   │   │               │   │   ├── AuthResponse$AuthResponseBuilder.class
-│   │   │               │   │   └── RegisterRequest.class
-│   │   │               │   ├── category/
-│   │   │               │   │   ├── CategoryRequest.class
-│   │   │               │   │   ├── CategoryResponse.class
-│   │   │               │   │   └── CategoryResponse$CategoryResponseBuilder.class
-│   │   │               │   ├── question/
-│   │   │               │   │   ├── QuestionRequest.class
-│   │   │               │   │   ├── QuestionResponse.class
-│   │   │               │   │   └── QuestionResponse$QuestionResponseBuilder.class
-│   │   │               │   ├── session/
-│   │   │               │   │   ├── ExaminationSessionRequest.class
-│   │   │               │   │   ├── ExaminationSessionResponse.class
-│   │   │               │   │   └── ExaminationSessionResponse$ExaminationSessionResponseBuilder.class
-│   │   │               │   └── user/
-│   │   │               │       ├── UserResponse.class
-│   │   │               │       └── UserResponse$UserResponseBuilder.class
-│   │   │               ├── ExamenApplication.class
-│   │   │               ├── exception/
-│   │   │               │   └── GlobalExceptionHandler.class
-│   │   │               ├── model/
-│   │   │               │   ├── Answer.class
-│   │   │               │   ├── Answer$AnswerBuilder.class
-│   │   │               │   ├── Category.class
-│   │   │               │   ├── Category$CategoryBuilder.class
-│   │   │               │   ├── DailyExamination.class
-│   │   │               │   ├── ExaminationSession.class
-│   │   │               │   ├── ExaminationSession$ExaminationSessionBuilder.class
-│   │   │               │   ├── Question.class
-│   │   │               │   ├── Question$QuestionBuilder.class
-│   │   │               │   ├── Role.class
-│   │   │               │   ├── ToDoItem.class
-│   │   │               │   ├── User.class
-│   │   │               │   └── User$UserBuilder.class
-│   │   │               ├── repository/
-│   │   │               │   ├── AnswerRepository.class
-│   │   │               │   ├── CategoryRepository.class
-│   │   │               │   ├── ExaminationSessionRepository.class
-│   │   │               │   ├── QuestionRepository.class
-│   │   │               │   ├── ToDoRepository.class
-│   │   │               │   └── UserRepository.class
-│   │   │               └── service/
-│   │   │                   ├── AnswerService.class
-│   │   │                   ├── AuthenticationService.class
-│   │   │                   ├── CategoryService.class
-│   │   │                   ├── ExaminationService.class
-│   │   │                   ├── ExaminationSessionService.class
-│   │   │                   ├── impl/
-│   │   │                   │   ├── AnswerServiceImpl.class
-│   │   │                   │   ├── AuthenticationServiceImpl.class
-│   │   │                   │   ├── CategoryServiceImpl.class
-│   │   │                   │   ├── ExaminationServiceImpl.class
-│   │   │                   │   ├── ExaminationSessionServiceImpl.class
-│   │   │                   │   ├── QuestionServiceImpl.class
-│   │   │                   │   └── UserServiceImpl.class
-│   │   │                   ├── QuestionService.class
-│   │   │                   ├── TodoService.class
-│   │   │                   └── UserService.class
-│   │   └── test/
-│   │       └── com/
-│   │           └── rei/
-│   │               └── examenbackend/
-│   │                   └── ExamenBackendApplicationTests.class
 │   ├── build.gradle.kts
 │   ├── Dockerfile
 │   ├── gradle/
@@ -285,6 +193,7 @@ examen/
 │   ├── tsconfig.server.json
 │   └── tsconfig.spec.json
 └── README.md
+
 ```
 
 # 🧩 Tech Stack
