@@ -5,6 +5,287 @@ Examen is a full-stack platform designed for daily examinations, category manage
 Built with **modern, scalable technologies**, the project is structured for real production environments with SSR rendering, microservice-ready backend architecture, and full Docker orchestration.
 
 ---
+# 📁 Project Structure
+```
+examen/
+├── .gitattributes
+├── .gitignore
+├── docker-compose.yml
+├── examen-backend/
+│   ├── bin/
+│   │   ├── main/
+│   │   │   ├── application.properties
+│   │   │   └── com/
+│   │   │       └── rei/
+│   │   │           └── examenbackend/
+│   │   │               ├── config/
+│   │   │               │   ├── CorsConfig.class
+│   │   │               │   ├── CorsConfig$1.class
+│   │   │               │   ├── JwtAuthenticationFilter.class
+│   │   │               │   ├── JwtService.class
+│   │   │               │   └── SecurityConfig.class
+│   │   │               ├── controller/
+│   │   │               │   ├── AnswerController.class
+│   │   │               │   ├── AuthenticationController.class
+│   │   │               │   ├── CategoryController.class
+│   │   │               │   ├── ExaminationController.class
+│   │   │               │   ├── ExaminationSessionController.class
+│   │   │               │   ├── QuestionController.class
+│   │   │               │   ├── TodoController.class
+│   │   │               │   └── UserController.class
+│   │   │               ├── dto/
+│   │   │               │   ├── answer/
+│   │   │               │   │   ├── AnswerRequest.class
+│   │   │               │   │   ├── AnswerResponse.class
+│   │   │               │   │   └── AnswerResponse$AnswerResponseBuilder.class
+│   │   │               │   ├── auth/
+│   │   │               │   │   ├── AuthRequest.class
+│   │   │               │   │   ├── AuthResponse.class
+│   │   │               │   │   ├── AuthResponse$AuthResponseBuilder.class
+│   │   │               │   │   └── RegisterRequest.class
+│   │   │               │   ├── category/
+│   │   │               │   │   ├── CategoryRequest.class
+│   │   │               │   │   ├── CategoryResponse.class
+│   │   │               │   │   └── CategoryResponse$CategoryResponseBuilder.class
+│   │   │               │   ├── question/
+│   │   │               │   │   ├── QuestionRequest.class
+│   │   │               │   │   ├── QuestionResponse.class
+│   │   │               │   │   └── QuestionResponse$QuestionResponseBuilder.class
+│   │   │               │   ├── session/
+│   │   │               │   │   ├── ExaminationSessionRequest.class
+│   │   │               │   │   ├── ExaminationSessionResponse.class
+│   │   │               │   │   └── ExaminationSessionResponse$ExaminationSessionResponseBuilder.class
+│   │   │               │   └── user/
+│   │   │               │       ├── UserResponse.class
+│   │   │               │       └── UserResponse$UserResponseBuilder.class
+│   │   │               ├── ExamenApplication.class
+│   │   │               ├── exception/
+│   │   │               │   └── GlobalExceptionHandler.class
+│   │   │               ├── model/
+│   │   │               │   ├── Answer.class
+│   │   │               │   ├── Answer$AnswerBuilder.class
+│   │   │               │   ├── Category.class
+│   │   │               │   ├── Category$CategoryBuilder.class
+│   │   │               │   ├── DailyExamination.class
+│   │   │               │   ├── ExaminationSession.class
+│   │   │               │   ├── ExaminationSession$ExaminationSessionBuilder.class
+│   │   │               │   ├── Question.class
+│   │   │               │   ├── Question$QuestionBuilder.class
+│   │   │               │   ├── Role.class
+│   │   │               │   ├── ToDoItem.class
+│   │   │               │   ├── User.class
+│   │   │               │   └── User$UserBuilder.class
+│   │   │               ├── repository/
+│   │   │               │   ├── AnswerRepository.class
+│   │   │               │   ├── CategoryRepository.class
+│   │   │               │   ├── ExaminationSessionRepository.class
+│   │   │               │   ├── QuestionRepository.class
+│   │   │               │   ├── ToDoRepository.class
+│   │   │               │   └── UserRepository.class
+│   │   │               └── service/
+│   │   │                   ├── AnswerService.class
+│   │   │                   ├── AuthenticationService.class
+│   │   │                   ├── CategoryService.class
+│   │   │                   ├── ExaminationService.class
+│   │   │                   ├── ExaminationSessionService.class
+│   │   │                   ├── impl/
+│   │   │                   │   ├── AnswerServiceImpl.class
+│   │   │                   │   ├── AuthenticationServiceImpl.class
+│   │   │                   │   ├── CategoryServiceImpl.class
+│   │   │                   │   ├── ExaminationServiceImpl.class
+│   │   │                   │   ├── ExaminationSessionServiceImpl.class
+│   │   │                   │   ├── QuestionServiceImpl.class
+│   │   │                   │   └── UserServiceImpl.class
+│   │   │                   ├── QuestionService.class
+│   │   │                   ├── TodoService.class
+│   │   │                   └── UserService.class
+│   │   └── test/
+│   │       └── com/
+│   │           └── rei/
+│   │               └── examenbackend/
+│   │                   └── ExamenBackendApplicationTests.class
+│   ├── build.gradle.kts
+│   ├── Dockerfile
+│   ├── gradle/
+│   │   └── wrapper/
+│   │       ├── gradle-wrapper.jar
+│   │       └── gradle-wrapper.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── HELP.md
+│   ├── settings.gradle.kts
+│   └── src/
+│       ├── main/
+│       │   ├── java/
+│       │   │   └── com/
+│       │   │       └── rei/
+│       │   │           └── examenbackend/
+│       │   │               ├── config/
+│       │   │               │   ├── CorsConfig.java
+│       │   │               │   ├── JwtAuthenticationFilter.java
+│       │   │               │   ├── JwtService.java
+│       │   │               │   └── SecurityConfig.java
+│       │   │               ├── controller/
+│       │   │               │   ├── AnswerController.java
+│       │   │               │   ├── AuthenticationController.java
+│       │   │               │   ├── CategoryController.java
+│       │   │               │   ├── ExaminationController.java
+│       │   │               │   ├── ExaminationSessionController.java
+│       │   │               │   ├── QuestionController.java
+│       │   │               │   ├── TodoController.java
+│       │   │               │   └── UserController.java
+│       │   │               ├── dto/
+│       │   │               │   ├── answer/
+│       │   │               │   │   ├── AnswerRequest.java
+│       │   │               │   │   └── AnswerResponse.java
+│       │   │               │   ├── auth/
+│       │   │               │   │   ├── AuthRequest.java
+│       │   │               │   │   ├── AuthResponse.java
+│       │   │               │   │   └── RegisterRequest.java
+│       │   │               │   ├── category/
+│       │   │               │   │   ├── CategoryRequest.java
+│       │   │               │   │   └── CategoryResponse.java
+│       │   │               │   ├── question/
+│       │   │               │   │   ├── QuestionRequest.java
+│       │   │               │   │   └── QuestionResponse.java
+│       │   │               │   ├── session/
+│       │   │               │   │   ├── ExaminationSessionRequest.java
+│       │   │               │   │   └── ExaminationSessionResponse.java
+│       │   │               │   └── user/
+│       │   │               │       └── UserResponse.java
+│       │   │               ├── ExamenApplication.java
+│       │   │               ├── exception/
+│       │   │               │   └── GlobalExceptionHandler.java
+│       │   │               ├── model/
+│       │   │               │   ├── Answer.java
+│       │   │               │   ├── Category.java
+│       │   │               │   ├── DailyExamination.java
+│       │   │               │   ├── ExaminationSession.java
+│       │   │               │   ├── Question.java
+│       │   │               │   ├── Role.java
+│       │   │               │   ├── ToDoItem.java
+│       │   │               │   └── User.java
+│       │   │               ├── repository/
+│       │   │               │   ├── AnswerRepository.java
+│       │   │               │   ├── CategoryRepository.java
+│       │   │               │   ├── ExaminationSessionRepository.java
+│       │   │               │   ├── QuestionRepository.java
+│       │   │               │   ├── ToDoRepository.java
+│       │   │               │   └── UserRepository.java
+│       │   │               └── service/
+│       │   │                   ├── AnswerService.java
+│       │   │                   ├── AuthenticationService.java
+│       │   │                   ├── CategoryService.java
+│       │   │                   ├── ExaminationService.java
+│       │   │                   ├── ExaminationSessionService.java
+│       │   │                   ├── impl/
+│       │   │                   │   ├── AnswerServiceImpl.java
+│       │   │                   │   ├── AuthenticationServiceImpl.java
+│       │   │                   │   ├── CategoryServiceImpl.java
+│       │   │                   │   ├── ExaminationServiceImpl.java
+│       │   │                   │   ├── ExaminationSessionServiceImpl.java
+│       │   │                   │   ├── QuestionServiceImpl.java
+│       │   │                   │   └── UserServiceImpl.java
+│       │   │                   ├── QuestionService.java
+│       │   │                   ├── TodoService.java
+│       │   │                   └── UserService.java
+│       │   └── resources/
+│       │       └── application.properties
+│       └── test/
+│           └── java/
+│               └── com/
+│                   └── rei/
+│                       └── examenbackend/
+│                           └── ExamenBackendApplicationTests.java
+├── examen-frontend/
+│   ├── .editorconfig
+│   ├── angular.json
+│   ├── Dockerfile
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public/
+│   │   └── favicon.ico
+│   ├── README.md
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── app.config.server.ts
+│   │   │   ├── app.config.ts
+│   │   │   ├── app.html
+│   │   │   ├── app.routes.ts
+│   │   │   ├── app.scss
+│   │   │   ├── app.ts
+│   │   │   ├── auth/
+│   │   │   │   ├── login/
+│   │   │   │   │   ├── login.component.html
+│   │   │   │   │   ├── login.component.scss
+│   │   │   │   │   └── login.component.ts
+│   │   │   │   └── register/
+│   │   │   │       ├── register.component.html
+│   │   │   │       ├── register.component.scss
+│   │   │   │       └── register.component.ts
+│   │   │   ├── categories/
+│   │   │   │   ├── category-create/
+│   │   │   │   │   ├── category-create.component.html
+│   │   │   │   │   ├── category-create.component.scss
+│   │   │   │   │   └── category-create.component.ts
+│   │   │   │   ├── category-edit/
+│   │   │   │   │   ├── category-edit.component.html
+│   │   │   │   │   ├── category-edit.component.scss
+│   │   │   │   │   └── category-edit.component.ts
+│   │   │   │   └── category-list/
+│   │   │   │       ├── category-list.component.html
+│   │   │   │       ├── category-list.component.scss
+│   │   │   │       ├── category-list.component.ts
+│   │   │   │       └── services/
+│   │   │   │           └── category.service.ts
+│   │   │   ├── core/
+│   │   │   │   ├── guards/
+│   │   │   │   │   └── auth.guard.ts
+│   │   │   │   ├── interceptors/
+│   │   │   │   │   ├── auth.interceptor.ts
+│   │   │   │   │   └── jwt.interceptor.ts
+│   │   │   │   └── services/
+│   │   │   │       ├── auth.service.ts
+│   │   │   │       ├── local-storage.service.ts
+│   │   │   │       └── profile.service.ts
+│   │   │   └── shared/
+│   │   │       └── features/
+│   │   │           ├── examination/
+│   │   │           │   ├── examination-today/
+│   │   │           │   │   ├── examination-today.component.html
+│   │   │           │   │   ├── examination-today.component.scss
+│   │   │           │   │   └── examination-today.component.ts
+│   │   │           │   ├── models/
+│   │   │           │   │   └── examination.model.ts
+│   │   │           │   └── services/
+│   │   │           │       └── examination.service.ts
+│   │   │           ├── profile/
+│   │   │           │   ├── profile-dashboard/
+│   │   │           │   │   ├── profile-dashboard.component.html
+│   │   │           │   │   ├── profile-dashboard.component.scss
+│   │   │           │   │   └── profile-dashboard.component.ts
+│   │   │           │   └── services/
+│   │   │           │       └── profile.service.ts
+│   │   │           └── todos/
+│   │   │               ├── services/
+│   │   │               │   └── todo.service.ts
+│   │   │               └── todo-list/
+│   │   │                   ├── todo-list.component.html
+│   │   │                   ├── todo-list.component.scss
+│   │   │                   └── todo-list.component.ts
+│   │   ├── environments/
+│   │   │   └── environment.ts
+│   │   ├── index.html
+│   │   ├── main.server.ts
+│   │   ├── main.ts
+│   │   ├── server.ts
+│   │   └── styles.scss
+│   ├── tsconfig.app.json
+│   ├── tsconfig.json
+│   ├── tsconfig.server.json
+│   └── tsconfig.spec.json
+└── README.md
+```
 
 # 🧩 Tech Stack
 
