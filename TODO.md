@@ -120,8 +120,6 @@ AI will transform the platform into a personal development companion by analyzin
   - mood history
   - recurring themes
   - weekly progress
-- [ ] Example:
-  > "You’ve mentioned stress more frequently. What caused it today?"
 
 ### 🔹 5. AI Journal Analysis
 - [ ] Sentiment scoring
