@@ -1,22 +1,70 @@
-# Root ignored files
+##############
+# OS / System
+##############
 .DS_Store
+Thumbs.db
+
+##############
+# Environment
+##############
 .env
+examen-frontend/.env
+examen-backend/.env
 pgdata/
 .examen-data/
 
-# Frontend
+##############
+# Frontend (Angular)
+##############
 examen-frontend/node_modules/
 examen-frontend/dist/
 examen-frontend/.angular/
+examen-frontend/.nx/
+examen-frontend/.angular/cache/
 
-# Backend
+##############
+# Backend (Spring Boot)
+##############
 examen-backend/build/
-examen-backend/.gradle/
 examen-backend/out/
+examen-backend/.gradle/
 
-# IDE
+##############
+# Build Artifacts
+##############
+/build/
+/bin/
+
+##############
+# Gradle
+##############
+.gradle/
+!gradle-wrapper.jar   # keep wrapper
+!/examen-backend/gradle/wrapper/
+
+##############
+# IDE / Editor
+##############
 .idea/
+*.iml
 .vscode/
 
+##############
+# Java / Compilation
+##############
+*.class
+hs_err_pid*
+replay_pid*
+
+##############
+# Node / JS logs
+##############
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+##############
 # Logs
+##############
 *.log
