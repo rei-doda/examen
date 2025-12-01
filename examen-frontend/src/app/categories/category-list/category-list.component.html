@@ -1,0 +1,27 @@
+<!-- src/app/categories/category-list/category-list.component.html -->
+<div class="category-list">
+  <h2>Categories</h2>
+  <button (click)="onCreate()">New Category</button>
+
+  <table *ngIf="categories.length">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of categories">
+      <td>{{ c.name }}</td>
+      <td>{{ c.description }}</td>
+      <td>
+        <button (click)="onEdit(c)">Edit</button>
+        <button (click)="onDelete(c)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!categories.length && !loading">No categories yet.</p>
+</div>

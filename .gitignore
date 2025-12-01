@@ -1,0 +1,22 @@
+# Root ignored files
+.DS_Store
+.env
+pgdata/
+.examen-data/
+
+# Frontend
+examen-frontend/node_modules/
+examen-frontend/dist/
+examen-frontend/.angular/
+
+# Backend
+examen-backend/build/
+examen-backend/.gradle/
+examen-backend/out/
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log

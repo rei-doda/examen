@@ -1,0 +1,29 @@
+<div class="exam-container" *ngIf="exam">
+
+  <h2>Today’s Examination ({{ exam.date }})</h2>
+
+  <div class="question-item"
+       *ngFor="let a of exam.answers; trackBy: trackByQuestionId">
+
+    <label>
+      <input type="checkbox"
+             [checked]="a.answerValue"
+             (change)="onToggle(a.questionId, $event)"/>
+      Question {{ a.questionId }}
+    </label>
+
+  </div>
+
+  <button class="save-btn" (click)="save()">
+    Save Examination
+  </button>
+
+</div>
+
+<div *ngIf="loading">
+  Loading…
+</div>
+
+<div *ngIf="!loading && !exam">
+  No examination available for today.
+</div>
