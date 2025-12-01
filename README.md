@@ -1,5 +1,5 @@
 # 🚀 Examen – Full Stack Examination Platform  
-**Angular 17 (SSR) + Spring Boot (Java 21) + PostgreSQL + Docker**
+**Angular 17 (SSR) + Spring Boot (Java 25) + PostgreSQL + Docker**
 
 Examen is a full-stack platform designed for daily examinations, category management, todos, authentication, and a personal dashboard.  
 Built with **modern, scalable technologies**, the project is structured for real production environments with SSR rendering, microservice-ready backend architecture, and full Docker orchestration.
@@ -11,7 +11,7 @@ Built with **modern, scalable technologies**, the project is structured for real
 | Layer | Technology |
 |------|------------|
 | **Frontend** | Angular 17+, Standalone Components, SSR (Server-Side Rendering), SCSS |
-| **Backend** | Spring Boot 3, Java 21, REST API, Validation |
+| **Backend** | Spring Boot 3, Java 25, REST API, Validation |
 | **Database** | PostgreSQL 15 |
 | **Authentication** | JWT (Bearer Token) |
 | **Deployment** | Docker + Docker Compose |
